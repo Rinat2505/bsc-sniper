@@ -1,0 +1,5 @@
+{
+  "BSC_WALLET_KEY": "YOUR_PRIVATE_KEY_HEX_WITHOUT_0x",
+  "TELEGRAM_BOT_TOKEN": "1234567890:AAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "TELEGRAM_CHAT_ID": "-1001234567890"
+}

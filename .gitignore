@@ -1,0 +1,16 @@
+# Секреты — никогда не коммитить
+keys.json
+
+# Runtime данные и логи
+sniper_history.json
+sniper_history.json.bak
+sniper_positions.json
+sniper_stdout.txt
+watchdog.log
+watchdog_console.txt
+watchdog_err.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

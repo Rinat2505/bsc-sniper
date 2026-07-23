@@ -1,0 +1,56 @@
+{
+  "dry_run": true,
+  "buy_amount_bnb": 0.05,
+  "min_dev_buy_bnb": 1.0,
+  "max_dev_buy_bnb": 5.0,
+  "_dev_comment": "BACKTEST 0-5 BNB: EV=+0.014 BNB/сд (8.7x лучше). 10-20 BNB = убыток -0.003/сд. Только малые пулы.",
+  "entry_delay_sec": 45,
+  "entry_min_price_chg_pct": 8,
+  "_entry_min_comment": "Поднято 3→8%: бэктест показал EV×8 при min_chg=8% (WR 65%, EV=+0.013). Меньше сделок, выше качество.",
+  "entry_abandon_drop_pct": 50,
+
+  "stoploss_early_delay_sec": 5,
+  "stoploss_early_loss_pct": 30,
+  "_early_comment": "Поднято с 15% до 30%: early_stop давал 0% winrate на 5 сделках (P&L=-0.14). Даём больше пространства.",
+  "stoploss2_delay_sec": 25,
+  "stoploss2_loss_pct": 23,
+  "stoploss3_delay_sec": 35,
+  "stoploss3_loss_pct": 10,
+  "_stoploss3_comment": "Поднято с 7% до 10%: меньше ложных срабатываний на волатильных малых пулах.",
+
+  "breakeven_activate_pct": 5,
+  "breakeven_buffer_pct": 2.0,
+  "_breakeven_comment": "Если пик >= 5% от входа, выходим не ниже -2% (покрывает газ+MEV). Конвертирует убытки в ноль.",
+  "trailing_stop_activate_pct": 5,
+  "_trailing_comment": "При 5%: trailing и breakeven активируются вместе. Breakeven = пол, trailing = потолок.",
+  "trailing_stop_pct": 15,
+
+  "position_timeout_sec": 60,
+  "timeout_extend_win_pct": 15,
+  "timeout_max_sec": 180,
+
+  "max_slippage_bps": 9900,
+  "sell_slippage_bps": 500,
+  "max_concurrent": 2,
+  "lp_drain_close_pct": 50,
+  "pause_hours_utc": [],
+  "daily_loss_limit_bnb": 0.15,
+  "_daily_loss_comment": "Стоп на весь день если потеряли >0.15 BNB за UTC-сутки (3x buy_amount). Сбрасывается в 00:00 UTC.",
+
+  "max_price_impact_pct": 25,
+  "_impact_comment": "Поднято до 25%: при пуле 1-5 BNB и покупке 0.05 BNB impact = 1-5%. Лимит нужен для <1 BNB пулов.",
+  "max_token_tax_pct": 15,
+
+  "_analysis_comment": "=== Анализ свопов, supply и bytecode ===",
+  "min_supply_in_lp_pct": 10,
+  "max_sell_pressure_pct": 65,
+  "max_single_sell_ratio": 0.70,
+  "max_lp_drop_pct": 35,
+
+  "_sim_comment": "=== DRY-RUN симуляция ===",
+  "sim_gas_price_gwei": 3,
+  "sim_gas_buy": 180000,
+  "sim_gas_sell": 200000,
+  "sim_tx_latency_min_sec": 3,
+  "sim_tx_latency_max_sec": 12
+}
